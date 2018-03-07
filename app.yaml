@@ -1,0 +1,76 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+
+- url: /data
+  static_dir: data
+  secure: always
+
+- url: /images
+  static_dir: images
+  secure: always
+
+- url: /node_modules/@webcomponents/webcomponentsjs
+  static_dir: webcomponentsjs
+  secure: always
+
+- url: /src
+  static_dir: dist/src
+  secure: always
+
+- url: /list/.*
+  static_files: index.html
+  upload: index.html
+  secure: always
+  http_headers:
+    Link:
+      </node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js>;rel=preload;as=script,
+      </src/components/shop-app.js>;rel=modulepreload;as=script,
+      </src/components/shop-list.js>;rel=modulepreload;as=script
+
+- url: /detail/.*
+  static_files: index.html
+  upload: index.html
+  secure: always
+  http_headers:
+    Link:
+      </node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js>;rel=preload;as=script,
+      </src/components/shop-app.js>;rel=modulepreload;as=script,
+      </src/components/shop-detail.js>;rel=modulepreload;as=script
+
+- url: /cart
+  static_files: index.html
+  upload: index.html
+  secure: always
+  http_headers:
+    Link:
+      </node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js>;rel=preload;as=script,
+      </src/components/shop-app.js>;rel=modulepreload;as=script,
+      </src/components/shop-cart.js>;rel=modulepreload;as=script
+
+- url: /checkout
+  static_files: index.html
+  upload: index.html
+  secure: always
+  http_headers:
+    Link:
+      </node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js>;rel=preload;as=script,
+      </src/components/shop-app.js>;rel=modulepreload;as=script,
+      </src/components/shop-checkout.js>;rel=modulepreload;as=script
+
+- url: /[^\.]*
+  static_files: index.html
+  upload: index.html
+  secure: always
+  http_headers:
+    Link:
+      </node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js>;rel=preload;as=script,
+      </src/components/shop-app.js>;rel=modulepreload;as=script
+
+skip_files:
+- bundled/
+- node_modules/
+- src/
+- test/
