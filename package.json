@@ -6,6 +6,7 @@
     "The Polymer Authors"
   ],
   "scripts": {
+    "serve": "polyserve --module-resolution node",
     "test": "mocha test/ --timeout=10000"
   },
   "dependencies": {
@@ -20,14 +21,15 @@
     "@polymer/polymer": "^3.0.0-pre.8",
     "lit-html": "^0.9.0",
     "pwa-helpers": "polymerlabs/pwa-helpers",
+    "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1"
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^5.0.0",
-    "puppeteer": "^1.0.0",
     "pixelmatch": "^4.0.2",
-    "polyserve": "^0.23.0"
+    "polyserve": "^0.24.0",
+    "puppeteer": "^1.0.0"
   }
 }

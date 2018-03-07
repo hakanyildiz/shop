@@ -12,9 +12,33 @@ import createStore from '../node_modules/@0xcda7a/redux-es6/es/createStore.js';
 import applyMiddleware from '../node_modules/@0xcda7a/redux-es6/es/applyMiddleware.js';
 import origCompose from '../node_modules/@0xcda7a/redux-es6/es/compose.js';
 import combineReducers from '../node_modules/@0xcda7a/redux-es6/es/combineReducers.js';
+// import createStore from 'redux/es/createStore';
+// import applyMiddleware from 'redux/es/applyMiddleware';
+// import origCompose from 'redux/es/compose';
+// import combineReducers from 'redux/es/combineReducers';
+
+// import { createStore, combineReducers, applyMiddleware, compose as origCompose } from 'redux';
+
+// import { createStore, combineReducers, applyMiddleware, compose as origCompose } from '../node_modules/redux/es/index.js';
+
+
 import thunk from '../node_modules/redux-thunk/es/index.js';
-import { lazyReducerEnhancer } from '../node_modules/pwa-helpers/lazy-reducer-enhancer.js';
+// import thunk from 'redux-thunk';
+
+
+
+// import { lazyReducerEnhancer } from '../node_modules/pwa-helpers/lazy-reducer-enhancer.js';
+import { lazyReducerEnhancer } from 'pwa-helpers/lazy-reducer-enhancer';
+
+
+
+
 import app from './reducers/app.js';
+// import app from './reducers/app';
+
+
+
+
 import categories from './reducers/categories.js';
 
 const compose = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || origCompose;
